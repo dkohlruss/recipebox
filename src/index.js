@@ -9,30 +9,68 @@ class MyRecipeBox extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {  recipes: this.props.recipes,
-                        currentrecipe : this.props.recipes[0]
+        this.state = {  recipes : this.props.recipes,
+                        currentrecipe : this.props.recipes[0],
         };  //Initial state is set to the 'recipes' var at bottom
 
         this.changeRecipe = this.changeRecipe.bind(this);
         this.onDelete = this.onDelete.bind(this);
+        this.onUpdate = this.onUpdate.bind(this);
+        this.addNewRecipe = this.addNewRecipe.bind(this);
     }
 
+    // Has to be updated with new way of doing current-recipe
     onDelete(key) {
         let tempState = this.state.recipes;
         tempState = tempState.filter((entry) => {
-            console.log(entry !== key);
             return entry !== key;
         });
 
-        this.setState({ recipes: tempState });
+        if (this.state.recipes.length > 0) {
+            this.setState({ recipes : tempState });
+        }
+
+        if (this.state.currentrecipe === this.state.recipes[0]) {
+            this.setState({ currentrecipe: this.state.recipes[1]});
+        } else {
+            this.setState({ currentrecipe: this.state.recipes[0]});
+        }
     }
 
-    onEdit(key) {
-        console.log(key);
-    }
+    // Has to be updated with new way of doing current-recipe
+
 
     changeRecipe(newRecipe) {
+
         this.setState({ currentrecipe: newRecipe });
+        console.log(this.state.currentrecipe);
+    }
+
+    addNewRecipe(addedState) {
+        let newRecipe = {name: addedState.newName,
+                        ingredients: addedState.newIngredients,
+                        directions: addedState.newDirections};
+        let tempState = this.state.recipes;
+        tempState.push(newRecipe);
+        this.setState({ currentrecipe: newRecipe,
+                        recipes: tempState });
+    }
+
+    onUpdate(event) {
+        let currentRecipe = this.state.currentrecipe;
+        switch (event.target.className) {
+            case ('current-recipe-name'):
+                currentRecipe.name = event.target.value;
+                break;
+            case ('current-recipe-ingredients'):
+                currentRecipe.ingredients = event.target.value.split(',');
+                break;
+            case ('current-recipe-directions'):
+                currentRecipe.directions = event.target.value;
+                break;
+        }
+        this.setState({currentrecipe: currentRecipe});
+        // Add in className handling/switch statement here
     }
 
     render() {
@@ -43,6 +81,9 @@ class MyRecipeBox extends Component {
                     recipe={this.state.currentrecipe}
                     onDelete={this.onDelete}
                     onEdit={this.onEdit}
+                    editing={this.state.editing}
+                    updateRecipe={this.onUpdate}
+                    addNewRecipe={this.addNewRecipe}
                 />
             </div>
         );
