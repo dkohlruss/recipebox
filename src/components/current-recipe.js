@@ -15,25 +15,6 @@ class CurrentRecipe extends Component  {
         this.onEdit = this.onEdit.bind(this);
     }
 
-
-
-
-
-    handleNew(event) {
-        console.log(event);
-        switch (event.target.className) {
-            case ('current-recipe-name'):
-                this.setState({name : event.target.value});
-                break;
-            case ('current-recipe-ingredients'):
-                this.setState({ingredients : event.target.value.split(',')});
-                break;
-            case ('current-recipe-directions'):
-                this.setState({directions : event.target.value});
-                break;
-        }
-    }
-
     saveRecipe(event) {
         console.log(event);
         this.props.updateRecipe(event);

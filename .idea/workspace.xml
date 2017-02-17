@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2a8ff955-63d8-414b-977f-e70a92e0af16" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/current-recipe.js" afterPath="$PROJECT_DIR$/src/components/current-recipe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,26 +30,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="current-recipe.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="current-recipe.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/current-recipe.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+            <state relative-caret-position="-187">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <marker date="1487298873042" expanded="true" signature="2889:3382" ph="..." />
-                <marker date="1487298873042" expanded="true" signature="2961:3027" ph="..." />
-                <marker date="1487298873042" expanded="true" signature="3049:3123" ph="..." />
+                <marker date="1487299787514" expanded="true" signature="2363:2856" ph="..." />
+                <marker date="1487299787514" expanded="true" signature="2435:2501" ph="..." />
+                <marker date="1487299787514" expanded="true" signature="2523:2597" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="595">
+              <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -79,8 +78,8 @@
         <option value="$PROJECT_DIR$/src/components/recipe-list-entry.js" />
         <option value="$PROJECT_DIR$/src/components/recipe-list.js" />
         <option value="$PROJECT_DIR$/src/components/recipe-ingredient.js" />
-        <option value="$PROJECT_DIR$/src/components/current-recipe.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/current-recipe.js" />
       </list>
     </option>
   </component>
@@ -266,12 +265,12 @@
       <option name="presentableId" value="Default" />
       <updated>1486940049866</updated>
       <workItem from="1486940053407" duration="451000" />
-      <workItem from="1487264018777" duration="23712000" />
+      <workItem from="1487264018777" duration="23759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24163000" />
+    <option name="totallyTimeSpent" value="24210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -440,25 +439,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/current-recipe.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+        <state relative-caret-position="595">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1487298873042" expanded="true" signature="2889:3382" ph="..." />
-            <marker date="1487298873042" expanded="true" signature="2961:3027" ph="..." />
-            <marker date="1487298873042" expanded="true" signature="3049:3123" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/current-recipe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="-187">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <marker date="1487299787514" expanded="true" signature="2363:2856" ph="..." />
+            <marker date="1487299787514" expanded="true" signature="2435:2501" ph="..." />
+            <marker date="1487299787514" expanded="true" signature="2523:2597" ph="..." />
           </folding>
         </state>
       </provider>
