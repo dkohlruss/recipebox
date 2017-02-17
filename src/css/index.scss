@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin|Roboto');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#container {
+  height: 100%;
+}
+
+.holder {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  padding: 10px 0 0 10px;
+
+  font-family: 'Pangolin', cursive;
+  font-size: 40px;
+  text-align: left;
+  color: white;
+
+  background: #56CBF9;
+
+  position: fixed;
+
+  display: block;
+}
+
+
+ul {
+  padding:10px;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.recipe-entry {
+    text-align: center;
+
+    background: #cce5ff;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+
+.ingredient-entry {
+  display: inline-block;
+}
+
+.ingredient-entry + ingredient-entry:before {
+  content: ", ";
+}
+
+h4 {
+  margin: 0;
+  text-align: center;
+}
+
+.horiz-holder {
+  margin: 0;
+  padding: 0;
+  width: 90%;
+
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 60px;
+
+  height: 100%;
+  width: 250px;
+  color: black;
+
+  background: #2F87AA;
+
+  padding: 75px 25px;
+}
+
+.current-recipe {
+  text-align: center;
+  margin: 0 0 50px 350px;
+
+  max-width: 900px;
+
+  position: absolute;
+}
+
+.current-recipe-directions {
+  min-width: 800px;
+}
+
+input {
+  width: 300px;
+  height: 30px;
+  margin: 20px 0 25px;
+  font-size: 25px;
+}
+
+textarea {
+  width: 800px;
+  height: 200px;
+  margin: 0 150px;
+  font-size: 20px;
+}
+
+button {
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 20px;
+  background: #56CBF9;
+  padding: 10px 20px 10px 20px;
+  border: solid #13333f 1px;
+  text-decoration: none;
+  margin: 10px 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}

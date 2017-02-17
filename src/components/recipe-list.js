@@ -13,7 +13,7 @@ const RecipeList = (props) => {
     });
 
     return (
-        <div>
+        <div className="sidebar"><h4>Recipes</h4>
             <ul>
                 {recipeNames}
             </ul>

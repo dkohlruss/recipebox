@@ -26,6 +26,8 @@ class CurrentRecipe extends Component  {
             case ('current-recipe-directions'):
                 this.setState({directions : event.target.value});
                 break;
+            default:
+                break;
         }
     }
 
@@ -57,11 +59,11 @@ class CurrentRecipe extends Component  {
 
         if (this.state.editing) {
             return (
-                <div>
+                <div className="current-recipe">
                     <input value={this.state.name}
                            className="current-recipe-name"
                            onChange={(event) => this.handleNew(event)} /><br />
-                    <input className="current-recipe-ingredients"
+                    <textarea className="current-recipe-ingredients"
                            value={this.state.ingredients.join(',')}
                            onChange={(event) => this.handleNew(event)} /> <br />
                     <textarea className="current-recipe-directions"
@@ -73,12 +75,12 @@ class CurrentRecipe extends Component  {
         }
 
         return (
-            <div>
-                <h1>{this.props.recipe.name}</h1>
+            <div className="current-recipe">
+                <h1 className="current-recipe-name">{this.props.recipe.name}</h1>
                 <div>
-                    <ul>{ingredients}</ul>
+                    <ul className="current-recipe-ingredients">{ingredients}</ul>
                 </div>
-                <div>
+                <div className="current-recipe-directions">
                     {this.props.recipe.directions}
                 </div>
                 <button onClick={() => this.onEdit(this.props)}>Edit</button>
