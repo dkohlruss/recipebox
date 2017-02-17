@@ -7,39 +7,52 @@ class CurrentRecipe extends Component  {
         super(props);
 
         this.state = { editing: false,
-                        newName: '',
-                        newIngredients: [],
-                        newDirections: ''};
+                        adding: false,
+                        name: '',
+                        ingredients: [],
+                        directions: ''};
 
         this.onEdit = this.onEdit.bind(this);
     }
 
-    onEdit(toggle) {
-        this.setState({ editing: toggle });
-    }
 
-    handleChange(event) {
-        this.props.updateRecipe(event);
-    }
+
+
 
     handleNew(event) {
+        console.log(event);
         switch (event.target.className) {
             case ('current-recipe-name'):
-                this.setState({newName : event.target.value});
+                this.setState({name : event.target.value});
                 break;
             case ('current-recipe-ingredients'):
-                this.setState({newIngredients : event.target.value.split(',')});
+                this.setState({ingredients : event.target.value.split(',')});
                 break;
             case ('current-recipe-directions'):
-                this.setState({newDirections : event.target.value});
+                this.setState({directions : event.target.value});
                 break;
         }
     }
 
-    addRecipe(toggle, newRecipe) {
-        this.setState({ adding: toggle });
-        if (!toggle) {
-            this.props.addNewRecipe(newRecipe);
+    saveRecipe(event) {
+        console.log(event);
+        this.props.updateRecipe(event);
+        this.setState({editing: false,
+                        adding: false});
+    }
+
+    onEdit(props) {
+        if (!props) {
+            this.setState({editing: true,
+                            adding: true,
+                            name: '',
+                            ingredients: [],
+                            directions: ''}); // If adding new recipe, just make the form editable and blank
+        } else {
+            this.setState({editing: true,
+                            name: props.recipe.name,
+                            ingredients: props.recipe.ingredients,
+                            directions: props.recipe.directions}) // If editing, populate with current recipe values
         }
     }
 
@@ -51,31 +64,16 @@ class CurrentRecipe extends Component  {
         if (this.state.editing) {
             return (
                 <div>
-                    <input value={this.props.recipe.name}
-                           className="current-recipe-name"
-                           onChange={(event) => this.handleChange(event)} /><br />
-                    <input className="current-recipe-ingredients"
-                           value={this.props.recipe.ingredients.join(',')}
-                           onChange={(event) => this.handleChange(event)} /> <br />
-                    <textarea className="current-recipe-directions"
-                              value={this.props.recipe.directions}
-                              onChange={(event) => this.handleChange(event)} /> <br />
-                    <button onClick={() => this.onEdit(false)}>BUTAN</button>
-                </div>
-            );
-        } else if (this.state.adding) {
-            return (
-                <div>
-                    <input value={this.state.newName}
+                    <input value={this.state.name}
                            className="current-recipe-name"
                            onChange={(event) => this.handleNew(event)} /><br />
                     <input className="current-recipe-ingredients"
-                           value={this.state.newIngredients.join(',')}
+                           value={this.state.ingredients.join(',')}
                            onChange={(event) => this.handleNew(event)} /> <br />
                     <textarea className="current-recipe-directions"
-                              value={this.state.newDirections}
+                              value={this.state.directions}
                               onChange={(event) => this.handleNew(event)} /> <br />
-                    <button onClick={() => this.addRecipe(false, this.state)}>Save!</button>
+                    <button onClick={() => this.saveRecipe(this.state)}>Save!</button>
                 </div>
             );
         }
@@ -91,7 +89,7 @@ class CurrentRecipe extends Component  {
                 </div>
                 <button onClick={() => this.onEdit(this.props)}>Edit</button>
                 <button onClick={() => this.props.onDelete(this.props.recipe)}>Delete</button>
-                <button onClick={() => this.addRecipe(true)}>Add</button>
+                <button onClick={() => this.onEdit()}>Add</button>
             </div>
         );
     }
