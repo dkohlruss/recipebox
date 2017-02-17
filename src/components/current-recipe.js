@@ -16,7 +16,6 @@ class CurrentRecipe extends Component  {
     }
 
     handleNew(event) {
-        console.log(event);
         switch (event.target.className) {
             case ('current-recipe-name'):
                 this.setState({name : event.target.value});
@@ -31,7 +30,6 @@ class CurrentRecipe extends Component  {
     }
 
     saveRecipe(event) {
-        console.log(event);
         this.props.updateRecipe(event);
         this.setState({editing: false,
                         adding: false});
