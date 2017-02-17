@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import RecipeList from './components/recipe-list';
 import CurrentRecipe from './components/current-recipe';
-
 // import './index.css'; // Style import
 
 class MyRecipeBox extends Component {
@@ -19,7 +18,6 @@ class MyRecipeBox extends Component {
         this.addNewRecipe = this.addNewRecipe.bind(this);
     }
 
-    // Has to be updated with new way of doing current-recipe
     onDelete(key) {
         let tempState = this.state.recipes;
         tempState = tempState.filter((entry) => {
@@ -36,9 +34,6 @@ class MyRecipeBox extends Component {
             this.setState({ currentrecipe: this.state.recipes[0]});
         }
     }
-
-    // Has to be updated with new way of doing current-recipe
-
 
     changeRecipe(newRecipe) {
 
