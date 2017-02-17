@@ -12,10 +12,8 @@ class MyRecipeBox extends Component {
                         currentrecipe : this.props.recipes[0],
         };  //Initial state is set to the 'recipes' var at bottom
 
-        this.changeRecipe = this.changeRecipe.bind(this);
         this.onDelete = this.onDelete.bind(this);
         this.onUpdate = this.onUpdate.bind(this);
-        this.addNewRecipe = this.addNewRecipe.bind(this);
     }
 
     onDelete(key) {
